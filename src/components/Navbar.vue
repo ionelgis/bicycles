@@ -42,7 +42,8 @@ export default {
 
 <style scoped>
 .nav-link.router-link-active.router-link-exact-active {
-  color: green;
+  color: #007bff;
+  font-weight: 600;
 }
 </style>
 

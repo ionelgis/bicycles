@@ -2,13 +2,15 @@
   <div id="app">
     <navbar></navbar>
     <router-view/>
+    <footer-row></footer-row>
   </div>
 </template>
 <script>
 import Navbar from "./components/Navbar.vue";
+import FooterRow from "./components/FooterRow.vue";
 import { productData } from "./config/hardcodedProducts.js";
 export default {
-  components: { Navbar },
+  components: { Navbar, FooterRow },
   created() {
     this.$store.commit("addDefaultProducts", productData);
   }
@@ -17,21 +19,16 @@ export default {
 
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.hero-section {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+.hero-section h1 {
+  text-align: center;
+  color: #ffffff;
 }
 </style>

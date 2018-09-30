@@ -1,8 +1,11 @@
 <template>
   <div class="about">
-    <h1>This is an add page</h1>
+    <section class="hero-section" >
+      <h1>Add a new product</h1>
+    </section> 
+    <section>  
     <div class="container">
-      <div class="row">
+      <div class="row my-5">
          <div class="col-8 mx-auto">
            <form class="text-left" @submit.prevent="formSubmit" >
              <div v-if="product.image" class="preview-image">
@@ -32,6 +35,7 @@
         </div>
        </div>
      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -54,9 +58,6 @@ export default {
         image: this.product.image,
         id: Date.now()
       };
-
-      // console.log(payload);
-
       this.$store.commit("addProduct", payload);
     }
   }
@@ -72,6 +73,12 @@ img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+form {
+  min-height: 300px;
+}
+.hero-section {
+  background-image: url("../assets/images/add.jpeg");
 }
 </style>
 

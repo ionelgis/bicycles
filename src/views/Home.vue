@@ -1,10 +1,16 @@
 <template>
   <div class="home">
-    <div class="container">
-      <div class="row">
-          <product-card v-for="product in products" :product="product" :key="product.id"></product-card>
+    <section class="hero-section" >
+      <h1>Best bicycles in town!</h1>
+    </section> 
+    <section>
+      <div class="container pt-5">
+        <h2 class="text-center">Latest bicycles available!</h2>
+        <div class="row py-5">
+            <product-card v-for="product in products" :product="product" :key="product.id"></product-card>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -22,3 +28,9 @@ export default {
   }
 };
 </script>
+<style>
+.hero-section {
+  background-image: url("../assets/images/home.jpeg");
+}
+</style>
+
