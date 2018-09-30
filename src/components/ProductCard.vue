@@ -25,7 +25,6 @@ export default {
 <style scoped>
 .product-image-wrap {
   height: 200px;
-  object-fit: cover;
 }
 .product-image {
   object-fit: cover;

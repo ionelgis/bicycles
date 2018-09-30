@@ -19,6 +19,9 @@ export default new Vuex.Store({
       payload.forEach(product => {
         state.products.push(product);
       });
+    },
+    addProduct(state, payload) {
+      state.products.push(payload)
     }
 
   },
