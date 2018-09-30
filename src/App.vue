@@ -1,19 +1,17 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/add">Add</router-link> |
-      <router-link to="/contact">Contact</router-link> |
-      <router-link to="/login">Log In</router-link> 
-    </div> -->
     <router-view/>
   </div>
 </template>
 <script>
 import Navbar from "./components/Navbar.vue";
+import { productData } from "./config/hardcodedProducts.js";
 export default {
-  components: { Navbar }
+  components: { Navbar },
+  created() {
+    this.$store.commit("addDefaultProducts", productData);
+  }
 };
 </script>
 

@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    loggedInUser: undefined
+    loggedInUser: undefined,
+    products: []
   },
   mutations: {
     setLoggedInUser(state, payload) {
@@ -13,14 +14,17 @@ export default new Vuex.Store({
     },
     logOutUser(state) {
       state.loggedInUser = undefined;
+    },
+    addDefaultProducts(state, payload) {
+      payload.forEach(product => {
+        state.products.push(product);
+      });
     }
-
-  },
-  actions: {
 
   },
   getters: {
     isLoggedIn: state => state.loggedInUser !== undefined,
-    getLoggedInUser: state => state.loggedInUser
+    getLoggedInUser: state => state.loggedInUser,
+    products: state => state.products
   }
 })
