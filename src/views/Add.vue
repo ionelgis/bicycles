@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row my-5">
          <div class="col-8 mx-auto">
-           <form class="text-left" @submit.prevent="formSubmit" >
+           <form id="addForm" class="text-left" @submit.prevent="formSubmit" >
              <div v-if="product.image" class="preview-image">
                <img :src="product.image" alt="">
              </div>
@@ -32,6 +32,9 @@
               Submit
             </button>
           </form>
+          <div class="alert alert-success" role="alert" :style="{'display': showConfirmationMessage ? 'block' : 'none'}">
+          You product has been added! You can view it on the home page.
+          </div>
         </div>
        </div>
      </div>
@@ -45,7 +48,8 @@ export default {
       product: {
         title: "",
         image: undefined
-      }
+      },
+      showConfirmationMessage: false
     };
   },
   methods: {
@@ -59,6 +63,16 @@ export default {
         id: Date.now()
       };
       this.$store.commit("addProduct", payload);
+      //reset from fields
+      this.product.title = "";
+      this.product.image = undefined;
+      document.getElementById("addForm").reset();
+      //show confirmation that product was saved
+      this.showConfirmationMessage = true;
+      //after 3 seconds hide confirmation message
+      setTimeout(() => {
+        this.showConfirmationMessage = false;
+      }, 5000);
     }
   }
 };

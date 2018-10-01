@@ -1,6 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="#">Bicycles</a>
+      <div class="container">
+         <a class="navbar-brand" href="/">Bicycles</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <router-link to="/" tag="li" class="nav-link">Home</router-link>
@@ -21,6 +22,8 @@
         <p class="mb-0 ">{{getLoggedInUser.userName}}</p>
         <small @click="handleLogOut">(<a href="#" @click.prevent>Log out</a> )</small>
     </div>
+      </div>
+   
 </nav>
 </template>
 

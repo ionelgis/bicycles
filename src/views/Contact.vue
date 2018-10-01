@@ -4,7 +4,7 @@
             <h1>Contact Us</h1>
         </section> 
         <section>
-            <div class="container">
+            <div class="container py-5">
                 <div class="row py-5">
                     <div class="col-md-6 text-left">
                         <h2 class="mb-4">Let's Talk</h2>

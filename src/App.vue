@@ -31,4 +31,13 @@ export default {
   text-align: center;
   color: #ffffff;
 }
+.h-fill-available {
+  height: -webkit-fill-available;
+}
+
+.centerY {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>
